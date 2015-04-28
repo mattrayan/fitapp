@@ -1,0 +1,20 @@
+<div class="headerMenu">
+    <div id="wrapper">
+        <div class="logo">
+            <div id="title-spacer"></div>
+            <div id="title"><a href="#/">Fitness.me</a></div>
+        </div>
+
+        <div class="dropdown" ng-show="user">
+            <span class="button-dropdown" data-buttons="dropdown">
+                <button class="button button-rounded button-flat-action"><i class="fa fa-user"></i> {{user}} <i class="fa fa-caret-down"></i></button>
+      
+                <ul>
+                    <li><a href="#/notifications"><i class="fa fa-bolt"></i> Notifications</a></li>
+                    <li><a href="#/account"><i class="fa fa-gear"></i> Settings</a></li>
+                    <li class="button-dropdown-divider"><a href="#/" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+</div>

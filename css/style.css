@@ -1,0 +1,287 @@
+body {
+    background-color: #F0FFFF;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    max-height: auto;
+    max-width: auto;
+}
+
+input {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    width: 94%;
+}
+
+
+/********** Header **********/
+
+.headerMenu {
+    background-color: #00B9ED;
+    height: 4.167em;
+    border-bottom: 0px;
+    padding-left: auto;
+    padding-right: auto;
+    width: 100%;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100em;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 15.25em;
+}
+
+#title-spacer {
+    background-color: #ff0000;
+    width: 100%;
+    height: 0.5em;
+}
+
+#title a {
+    font: bold 35px Arial, Helvetica, Sans-serif;
+    color: #f5f5f5;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+.dropdown {
+    padding-top: 0.7em;
+}
+
+
+/********** Login Box **********/
+
+.login-box {
+    width: 33.333em;
+    height: 17.083em;
+    background-color: #00B9ED;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#register {
+    float: right;
+    color: #0000ff;
+    font-size: 15px;
+}
+
+
+/********** Registration Box **********/
+
+.register-box {
+    width: 33.333em;
+    height: 26.25em;
+    background-color: #00B9ED;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.register-box .ng-invalid.ng-dirty {
+    border-color: #FF0000;
+}
+
+.register-box .ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+
+/********** Account Box **********/
+
+.account-box {
+    width: 33.333em;
+    height: 27.5em;
+    background-color: #00B9ED;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+
+    padding-top: 1%;
+    padding-bottom: 8%;
+}
+
+.account-box .ng-invalid.ng-dirty {
+    border-color: #FF0000;
+}
+
+.account-box .ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+
+/********** Box Styles **********/
+
+.box-content {
+    padding: 15px;
+}
+
+#box-title {
+    font-size: 20px;
+}
+
+.box-fields {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.error {
+    float: right;
+    color: #d00000;
+    font-size: 15px;
+}
+
+.success {
+    float: right;
+    color: #00ff00;
+    font-size: 15px;
+}
+
+
+/********** Profile **********/
+
+.profile {
+    padding: 3em;
+}
+
+.row-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.details {
+    width: 65%;
+    padding-left: 2em;
+    font-size: 16px;
+}
+
+.profile-picture {
+    cursor: pointer;
+    height: 17em;
+    width: 17em;
+    border: 4px solid #00B9ED;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    background-color: #00B9ED;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0.35em;
+    min-width: 25em;
+}
+
+.section-title {
+    font-size: 2em;
+}
+
+.main, .personal {
+    margin-left: 2em;
+}
+
+.lifts {
+    width: 45.5em;
+    margin-right: 2em;
+}
+
+.container {
+    border: 1px solid #000000;
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    font-size: 1.3em;
+    padding: 0.35em;
+}
+
+.container input {
+    padding: 0px;
+    width: 98%;
+    border-radius: 0px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.content {
+    margin-top: 2em;
+    display: inline-flex;
+}
+
+.wall {
+    width: 30em;
+}
+
+.wall textarea {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px dotted #000000;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    padding: 3px;
+    padding-top: 0px;
+    width: 98%;
+}
+
+.wall textarea:focus {
+    cursor: text;
+    height: 6em;
+}
+
+input[type="date"] {
+    font-size: 1.3em;
+    padding: 0px;
+}

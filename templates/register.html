@@ -1,0 +1,17 @@
+<div class="register-box">
+    <div class="box-content">
+        <form name="register" novalidate>
+            <span id="box-title">Register</span>
+            <span class="error" ng-show="registerError">{{registerError}}</span>
+            <div class="box-fields">
+                <input type="text" name="username" placeholder="Username" ng-model="registerForm.username" required /><br/><br/>
+                <input type="email" name="email" placeholder="Email" ng-model="registerForm.email" required /><br/><br/>
+                <input type="password" name="password" placeholder="Password (min. 6 characters)" ng-model="registerForm.password" ng-minlength="6" required /><br/><br/>
+                <input type="password" name="passwordConfirm" placeholder="Confirm Password" ng-model="registerForm.passwordConfirm" ng-pattern="registerForm.password" required /><br/><br/>
+            </div>
+            <div class="nav-buttons">
+                <button class="button button-rounded button-flat" ng-click="signUp()">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>

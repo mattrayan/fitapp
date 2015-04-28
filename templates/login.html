@@ -1,0 +1,16 @@
+<div class="login-box">
+    <div class="box-content">
+        <form name="log_in" novalidate>
+            <span id="box-title">Login</span>
+            <span class="error" ng-show="loginError">{{loginError}}</span>
+            <div class="box-fields">
+                <input type="text" name="username" placeholder="Username" ng-model="loginForm.username" required /><br/><br/>
+                <input type="password" name="password" placeholder="Password" ng-model="loginForm.password" required /><br/><br/>
+            </div>
+            <div class="nav-buttons">
+                <button class="button button-rounded button-flat" ng-click="login()">Login</button>
+                <a href="#/register" id="register">Register</a>
+            </div>
+        </form>
+    </div>
+</div>

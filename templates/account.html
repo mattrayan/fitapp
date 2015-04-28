@@ -1,0 +1,43 @@
+<div class="account-box">
+    <div class="box-content">
+        <span id="box-title">Account Settings</span>
+        <span class="error" ng-show="accountError">{{accountError}}</span>
+
+        <div class="nav-buttons">
+            <button class="button button-rounded button-flat-caution" ng-click="setTab(1)">Email</button>
+            <button class="button button-rounded button-flat-caution" ng-click="setTab(2)">Password</button>
+            <button class="button button-rounded button-flat-caution" ng-click="setTab(3)">Privacy</button>
+        </div>
+
+        <form name="email" ng-show="isSelected(1)" novalidate>
+            <div class="box-fields">
+                <input type="email" name="email" placeholder="Email" ng-model="emailForm.email" required /><br/><br/>
+            </div>
+            <div class="nav-buttons">
+                <button class="button button-rounded button-flat" ng-click="updateEmail()">Update</button>
+                <span class="success" ng-show="accountSuccess">Success</span>
+            </div>
+        </form>
+
+        <form name="password" ng-show="isSelected(2)" novalidate>
+            <div class="box-fields">
+                <input type="password" name="old" placeholder="Old Password" ng-model="passwordForm.old" required /><br/><br/>
+                <input type="password" name="new" placeholder="New Password (min. 6 characters)" ng-model="passwordForm.new" ng-minlength="6" required /><br/><br/>
+                <input type="password" name="confirm" placeholder="Confirm Password" ng-model="passwordForm.confirm" ng-pattern="passwordForm.new" required /><br/><br/>
+            </div>
+            <div class="nav-buttons">
+                <button class="button button-rounded button-flat" ng-click="updatePassword()">Update</button>
+                <span class="success" ng-show="accountSuccess">Success</span>
+            </div>
+        </form>
+
+        <form name="password" ng-show="isSelected(3)" novalidate>
+            <div class="box-fields">
+            </div>
+            <div class="nav-buttons">
+                <button class="button button-rounded button-flat" ng-click="deleteAccount()">Delete Account</button>
+                <span class="success" ng-show="accountSuccess">Success</span>
+            </div>
+        </form>
+    </div>
+</div>
