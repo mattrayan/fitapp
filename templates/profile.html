@@ -2,87 +2,23 @@
     <div class="row-header">
         <div class="profile-picture"></div>
 
-        <div class="section main">
-            <div class="section-header">
-                <div class="section-title">{{user}}</div>
-                <i class="fa fa-pencil" ng-hide="userEdit" ng-click="toggleEdit('user')"></i>
+        <div class="content">
+            <div class="nav-buttons profile-nav">
+                <button class="button button-rounded button-flat-caution" ng-click="setTab(1)">{{user}}</button>
+                <button class="button button-rounded button-flat-caution" ng-click="setTab(2)">Lifts</button>
+                <button class="button button-rounded button-flat-caution" ng-click="setTab(3)">Wall</button>
             </div>
-            <div class="container" ng-hide="userEdit">
-                <div>Goal: Build Muscle</div>
-                <div>Member Since: October 27, 1989</div>
-                <div>Gym: AC</div>
-            </div>
-            <div class="container" ng-show="userEdit">
-                <div>Goal:
-                    <select ng-model="userForm.goal">
-                        <option>Build Muscle</option>
-                        <option>Gain Weight</option>
-                        <option>Lose Fat</option>
-                        <option>Endurance</option>
-                    </select>
+
+            <div class="wall" ng-show="isSelected(3)">
+                <div class="container">
+                    <textarea type="text" name="wallpost" placeholder="Write a post..." ng-keyup="processLength()" ng-model="profileForm.wallpost"></textarea>
+                    <div>
+                        <button class="button button-primary button-rounded button-flat" ng-click="post()">Post</button>
+                        {{charsLeft}} characters left
+                    </div>
                 </div>
-                <div>Member Since: October 27, 1989</div>
-                <div>Gym: <input type="text" ng-model="userForm.gym"></div>
-                <br/>
-                <button class="button button-primary button-rounded button-flat" ng-click="saveUser">Save</button>
-                <button class="button button-primary button-rounded button-flat" ng-click="toggleEdit('user')">Cancel</button>
             </div>
         </div>
 
-        <div class="section personal">
-            <div class="section-header">
-                <div class="section-title">Personal Stats</div>
-                <i class="fa fa-pencil" ng-hide="statsEdit" ng-click="toggleEdit('stats')"></i>
-            </div>
-            <div class="container" ng-hide="statsEdit">
-                <div>Age: 25</div>
-                <div>Weight: 200</div>
-                <div>Height: 6</div>
-                <div>Body Type: Ectomorph</div>
-            </div>
-            <div class="container" ng-show="statsEdit">
-                <div>Age: <input type="number" ng-model="statsForm.age"></div>
-                <div>Weight: <input type="number" ng-model="statsForm.weight"></div>
-                <div>Height: <input type="number" ng-model="statsForm.height"></div>
-                <div>Body Type:
-                    <select ng-model="statsForm.type">
-                        <option>Ectomorph</option>
-                        <option>Mesomorph</option>
-                        <option>Endomorph</option>
-                    </select>
-                </div>
-                <br/>
-                <button class="button button-primary button-rounded button-flat" ng-click="saveUser">Save</button>
-                <button class="button button-primary button-rounded button-flat" ng-click="toggleEdit('stats')">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="content">
-        <div class="section lifts">
-            <div class="section-header">
-                <div class="section-title">Lifts</div>
-                <i class="fa fa-pencil" ng-hide="liftsEdit" ng-click="toggleEdit('lifts')"></i>
-            </div>
-            <div class="container" ng-hide="liftsEdit">
-                Hello
-            </div>
-            <div class="container" ng-show="liftsEdit">
-                <br/>
-                <button class="button button-primary button-rounded button-flat" ng-click="saveUser">Save</button>
-                <button class="button button-primary button-rounded button-flat" ng-click="toggleEdit('lifts')">Cancel</button>
-            </div>
-        </div>
-
-        <div class="section wall">
-            <div class="section-header">
-                <div class="section-title">Wall</div>
-            </div>
-            <div class="container">
-                <textarea type="text" name="wallpost" placeholder="Write a post..." ng-keyup="processLength()" ng-model="profileForm.wallpost"></textarea>
-                <button class="button button-primary button-rounded button-flat" ng-click="post()">Post</button>
-                {{charsLeft}} characters left
-            </div>
-        </div>
     </div>
 </div>

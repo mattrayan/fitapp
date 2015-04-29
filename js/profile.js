@@ -2,26 +2,30 @@
     var app = angular.module('profile', []);
 
     app.controller('profileCtrl', function($scope, $http, $cookieStore) {
-        $scope.userForm = {};
-        $scope.userForm.goal = "Build Muscle";
-
-        $scope.statsForm = {};
-        $scope.statsForm.age = 19;
-        $scope.statsForm.weight = 200;
-        $scope.statsForm.height = 6;
-        $scope.statsForm.type = "Ectomorph"
-
-        $scope.userEdit = false;
-        $scope.statsEdit = false;
-        $scope.liftsEdit = false;
-
         $scope.$parent.session();
 
         $scope.charsLeft = 140;
 
         $scope.processLength = function() {
             $scope.charsLeft = 140 - $scope.profileForm.wallpost.length;
+
+            if ($scope.profileForm.wallpost.length >= 140) {
+                $scope.profileForm.wallpost = $scope.profileForm.wallpost.substring(0, 140); 
+                $scope.charsLeft = 0;
+            }
         }
+
+        $scope.tab = 1;
+
+        $scope.setTab = function(index) {
+            $scope.tab = index;
+            $scope.accountSuccess = false;
+            $scope.accountError = false;
+        };
+
+        $scope.isSelected = function(index) {
+            return $scope.tab === index;
+        };
 
         $scope.toggleEdit = function(section) {
             switch (section) {
