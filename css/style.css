@@ -140,6 +140,10 @@ input {
     padding-bottom: 8%;
 }
 
+.nav-buttons button {
+    width: 8em;
+}
+
 .account-box .ng-invalid.ng-dirty {
     border-color: #FF0000;
 }
@@ -204,12 +208,17 @@ input {
     margin-left: 2.5em;
 }
 
+.username {
+    font-size: 3em;
+}
+
 .profile-nav {
     justify-content: flex-start;
 }
 
 .profile-nav button {
-    margin-right: 3.5em;
+    margin-right: 3em;
+    width: 9em;
 }
 
 .wall textarea {
