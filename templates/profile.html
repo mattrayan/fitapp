@@ -11,12 +11,16 @@
             </div>
 
             <div class="wall" ng-show="isSelected(3)">
-                <div class="container">
+                <div class="wallpost-container">
                     <textarea type="text" name="wallpost" placeholder="Write a post..." ng-keyup="processLength()" ng-model="profileForm.wallpost"></textarea>
                     <div>
                         <button class="button button-primary button-rounded button-flat" ng-click="post()">Post</button>
                         {{charsLeft}} characters left
                     </div>
+                </div>
+
+                <div ng-repeat="wallpost in wallposts | orderBy: '-date'" class="wallpost">
+                    {{wallpost.message}}
                 </div>
             </div>
         </div>

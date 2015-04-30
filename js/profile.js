@@ -4,6 +4,8 @@
     app.controller('profileCtrl', function($scope, $http, $cookieStore) {
         $scope.$parent.session();
 
+        $scope.profileForm = {};
+        $scope.wallposts = [];
         $scope.charsLeft = 140;
 
         $scope.processLength = function() {
@@ -38,6 +40,18 @@
                 case 'lifts':
                     $scope.liftsEdit = !$scope.liftsEdit;
                     break;
+            }
+        }
+
+        $scope.post = function() {
+            if ($scope.profileForm.wallpost.length > 0) {
+                $scope.wallposts.push(
+                    {
+                        message: $scope.profileForm.wallpost,
+                        date: new Date()
+                    }
+                );
+                $scope.profileForm.wallpost = "";
             }
         }
     });

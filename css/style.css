@@ -221,13 +221,21 @@ input {
     width: 9em;
 }
 
+.wallpost-container {
+    margin-bottom: 3em;
+}
+
 .wall textarea {
     width: 30em;
-    height: 3.3em;
+    height: 6.4em;
     font-family: Arial, Helvetica, Sans-serif;
 }
 
-.wall textarea:focus {
-    height: 7.4em;
-    cursor: text;
+.wallpost {
+    font-size: 1.35em;
+    border: 1px dotted #000000;
+    border-radius: 4px;
+    padding: 3px;
+    margin-top: 1em;
+    min-width: 60%;
 }
