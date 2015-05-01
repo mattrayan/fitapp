@@ -6,13 +6,13 @@
 
         $scope.profileForm = {};
         $scope.wallposts = [];
-        $scope.charsLeft = 140;
+        $scope.charsLeft = 400;
 
         $scope.processLength = function() {
-            $scope.charsLeft = 140 - $scope.profileForm.wallpost.length;
+            $scope.charsLeft = 400 - $scope.profileForm.wallpost.length;
 
-            if ($scope.profileForm.wallpost.length >= 140) {
-                $scope.profileForm.wallpost = $scope.profileForm.wallpost.substring(0, 140); 
+            if ($scope.profileForm.wallpost.length >= 400) {
+                $scope.profileForm.wallpost = $scope.profileForm.wallpost.substring(0, 400);
                 $scope.charsLeft = 0;
             }
         }
@@ -52,6 +52,7 @@
                     }
                 );
                 $scope.profileForm.wallpost = "";
+                $scope.charsLeft = 400;
             }
         }
     });

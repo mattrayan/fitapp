@@ -20,6 +20,7 @@
                 </div>
 
                 <div ng-repeat="wallpost in wallposts | orderBy: '-date'" class="wallpost">
+                    <div class="date">{{wallpost.date | date:"MMM d, yyyy 'at' h:mma"}}</div>
                     {{wallpost.message}}
                 </div>
             </div>
