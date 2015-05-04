@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('login', []);
 
-    app.controller('loginCtrl', function($scope, $http, $cookieStore, $location) {
+    app.controller('loginCtrl', ['$scope', '$http', '$cookieStore', '$location', function($scope, $http, $cookieStore, $location) {
         $scope.loginForm = {};
 
         // If already logged-in, re-direct
@@ -26,6 +26,6 @@
                 $scope.loginForm = {};
             });
         };
-    });
+    }]);
 
 })();

@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('profile', []);
 
-    app.controller('profileCtrl', function($scope, $http, $cookieStore) {
+    app.controller('profileCtrl', ['$scope', '$http', '$cookieStore', function($scope, $http, $cookieStore) {
         $scope.$parent.session();
 
         $scope.profileForm = {};
@@ -55,6 +55,6 @@
                 $scope.charsLeft = 400;
             }
         }
-    });
+    }]);
 
 })();

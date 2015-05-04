@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('register', []);
 
-    app.controller('registerCtrl', function($scope, $http, $cookieStore, $location) {
+    app.controller('registerCtrl', ['$scope', '$http', '$cookieStore', '$location', function($scope, $http, $cookieStore, $location) {
         $scope.registerForm = {};
 
         $scope.signUp = function() {
@@ -32,6 +32,6 @@
                 }
             }
         };
-    });
+    }]);
 
 })();

@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('account', []);
 
-    app.controller('accountCtrl', function($scope, $http, $cookieStore, $location, $timeout) {
+    app.controller('accountCtrl', ['$scope', '$http', '$cookieStore', '$location', '$timeout', function($scope, $http, $cookieStore, $location, $timeout) {
         $scope.emailForm = {};
         $scope.passwordForm = {};
 
@@ -83,6 +83,6 @@
             });
         };
 
-    });
+    }]);
 
 })();

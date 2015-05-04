@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('fitness', ['ngCookies', 'ngRoute', 'login', 'register', 'profile', 'account', 'directives']);
 
-    app.controller('appCtrl', function($scope, $cookieStore, $location) {
+    app.controller('appCtrl', ['$scope', '$cookieStore', '$location', function($scope, $cookieStore, $location) {
         $scope.serverUrl = "http://localhost:3000";
 
         // Check if logged in
@@ -23,7 +23,7 @@
             $cookieStore.remove("fitdb.user");
             $scope.go('/');
         };
-    });
+    }]);
 
     // Setup routes
     app.config(function($routeProvider) {
