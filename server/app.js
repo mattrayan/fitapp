@@ -20,12 +20,12 @@ app.configure( function() {
 
 
 // Rest API and Routes
-app.get('/api/login/:username/:password', function(request, response) {
-    console.log(request.params);
+app.post('/api/login/', function(request, response) {
+    console.log(request.body);
 
     var query = {
-        "username": request.params.username,
-        "password": request.params.password
+        "username": request.body.username,
+        "password": request.body.password
     }
 
     mongo.queryDb('users', query, function(result) {
@@ -45,13 +45,13 @@ app.get('/api/info/:target/:username', function(request, response) {
     });
 });
 
-app.post('/api/register/:username/:email/:password', function(request, response) {
-    console.log(request.params);
+app.post('/api/register/', function(request, response) {
+    console.log(request.body);
 
     var data = {
-        username: request.params.username,
-        email: request.params.email,
-        password: request.params.password,
+        username: request.body.username,
+        email: request.body.email,
+        password: request.body.password,
         verified: false
     };
 

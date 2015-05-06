@@ -12,7 +12,12 @@
         $scope.login = function() {
             $scope.loginError = false;
 
-            $http.get($scope.$parent.serverUrl + '/api/login/' + $scope.loginForm.username + '/' + $scope.loginForm.password).success(function(data) {
+            var payload = {
+                username: $scope.loginForm.username,
+                password: $scope.loginForm.password
+            };
+
+            $http.post($scope.$parent.serverUrl + '/api/login/', payload).success(function(data) {
                 if (data === "No record found") {
                     $scope.loginError = "Username or password incorrect";
                 } else if (data[0].username === $scope.loginForm.username) {

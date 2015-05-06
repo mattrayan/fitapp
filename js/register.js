@@ -16,15 +16,21 @@
             } else if ((typeof $scope.registerForm.password === "undefined") || (typeof $scope.registerForm.passwordConfirm === "undefined")) {
                 $scope.registerError = "Please enter password";
             } else {
+                var payload = {
+                    username: $scope.registerForm.username,
+                    email: $scope.registerForm.email,
+                    password: $scope.registerForm.password
+                };
+
                 if (!$scope.registerError) {
-                    $http.post($scope.$parent.serverUrl + '/api/register/' + $scope.registerForm.username + '/' + $scope.registerForm.email + '/' + $scope.registerForm.password).success(function(data) {
+                    $http.post($scope.$parent.serverUrl + '/api/register/', payload).success(function(data) {
                         if (data === "Username conflict") {
                             $scope.registerError = "Username is already taken";
                         } else if (data === "Email conflict") {
                             $scope.registerError = "Email is already in use";
                         } else if (data[0].username === $scope.registerForm.username) {
                             $cookieStore.put("fitdb.user", data[0].username);
-                            $scope.$parent.go('/account');
+                            $scope.$parent.go('/');
                         } else {
                             $scope.registerError = "Error, could not register at this time";
                         }
